@@ -1,0 +1,186 @@
+/* style.css */
+body {
+    font-family: 'Mukta', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #7B68EE, #9400D3);
+    color: #000;
+}
+
+#logout-button {
+    background-color: #9400D3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#logout-button:hover {
+    background-color: #6A5ACD;
+}
+
+header {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 57px auto;
+    padding: 20px;
+    /* background-color: rgba(255, 255, 255, 0.9); Remove this line */
+    /* border: 1px solid #ccc; Remove this line */
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    overflow: hidden;
+}
+
+
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+h2 {
+    text-align: center;
+    color: #9400D3;
+}
+
+input[type="text"],
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #000;
+}
+
+button {
+    background-color: #9400D3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6A5ACD;
+}
+
+
+.post {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+   
+        /* Existing CSS for .post */
+        position: relative; /* Add this to establish a positioning context */
+        max-height: 400px; /* Set a maximum height for the posts */
+        overflow-y: auto; /* Enable vertical scrolling if the content exceeds the height */
+        margin-bottom: 30px; /* Increase the margin at the bottom to add spacing between posts */
+    }
+
+
+.post h2 {
+    background-color: #9400D3;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+}
+
+.post p {
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-height: 100px;
+    color: #000;
+}
+
+.post p[contenteditable="true"] {
+    background-color: white;
+    cursor: text;
+    min-height: auto;
+}
+
+.post p[contenteditable="true"]:focus {
+    border: 1px solid #9400D3;
+}
+
+#search-bar {
+    text-align: right;
+}
+
+#search-input {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #000;
+}
+
+#search-button {
+    background-color: #9400D3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #6A5ACD;
+}
+
+.post {
+    /* Existing CSS for .post */
+    position: relative; /* Add this to establish a positioning context */
+}
+
+.post-image {
+    max-width: 100%; /* Limit the maximum width of the image to 100% of its container */
+    height: auto; /* Maintain the image's aspect ratio */
+    display: block; /* Remove any extra spacing below the image */
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+#title {
+    width: 80%;
+}
+#content {
+    width: 95%;
+}
+.commentslist {
+    max-height: 100px; /* Set a maximum height for the comments */
+    overflow-y: auto; 
+    /* Enable vertical scrolling if comments exceed the height */
+    width: 50px;
+}
+.post button {
+    margin-right: 10px;
+}
+/* Add CSS for comments, likes, and dislikes here if needed */

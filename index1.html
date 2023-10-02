@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog App</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
+    <script>
+        // Check if the user is authenticated
+firebase.auth().onAuthStateChanged(function (user) {
+  if (user) {
+    // User is signed in, allow access to index1.html
+    // You can redirect the user to index1.html here.
+  } else {
+    // No user is signed in, redirect to the login page
+    window.location.href = "login.html";
+  }
+});
+
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Blog App</h1>
+        <button id="logout-button"> <a href="login.html" style="text-decoration: none; color: white;"> Logout</a></button>
+        <input type="text" id="search-input" placeholder="Search by keywords or tags">
+        <button id="search-button">Search</button>
+    </header>
+    
+    <main>
+        <section id="create-post">
+            <h2 style="color: black;">Create a New Post</h2>
+            <form id="create-post-form" enctype="multipart/form-data">
+                <input type="text" id="title" placeholder="Enter Title" required>
+                <textarea id="content" placeholder="Enter Content" required></textarea>
+                <input type="file" id="media" accept="image/*, video/*">
+                <button type="submit">Create Post</button>
+            </form>
+        </section>
+
+        <section id="written-posts">
+            <h2 style="color: black;">Written Posts</h2>
+            <div id="posts"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
