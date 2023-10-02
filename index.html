@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reg.css">
+    <link href="https://fonts.googleapis.com/css?family=Mukta&display=swap" rel="stylesheet">
+    <title>Registration Page</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Change to column layout */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #7B68EE, #9400D3);
+            font-family: 'Mukta', sans-serif;
+        }
+        .sign a {
+            text-decoration: none; /* Remove underline */
+            color: black; /* Your desired color here */; /* Change to the color you want */
+        }
+        .registration-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Style the input fields */
+        input {
+            width: 80%;
+            padding: 10px;
+            font-size: 15px;
+            margin-bottom: 10px;
+            border: black solid 1px;
+            border-radius: 5px;
+        }
+
+        /* Increase the size of the buttons */
+        button {
+            width: 100%;
+            padding: 12px; /* Increased padding for a larger button */
+            font-size: 20px; /* Larger font size */
+            margin-bottom: 10px;
+            border: black solid 1px;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        .google-registration {
+            background-color: #ffffff;
+            color: rgb(3, 3, 3);
+            border: black solid 1px;
+        }
+
+        .email-registration {
+            background-color: #673AB7;
+            color: white;
+        }
+        .sign {
+            background-color: #ffffff;
+            color: rgb(3, 3, 3);
+            border: black solid 1px;
+            border-radius: 10px;
+            width: 100px;
+            align-items: center;
+        }
+        .or-divider {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .google-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="registration-container">
+        <h1>Create Your Blog Account</h1>
+        <div id="registration-form">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <button class="email-registration">Register with Email</button>
+        </div>
+    </div>
+    <div class="login">
+        <p style="color: #ffffff; font-size: 25px;"> Have an account?</p>
+        <center>
+            <button class="sign"><a href="login.html"> Login </a> </button>
+        </center>
+    </div>
+
+    
+</body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+    import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyD5xPAKd6uVMbV4mabZec8KM1fUcmWdnbc",
+      authDomain: "blog-bed92.firebaseapp.com",
+      databaseURL: "https://blog-bed92-default-rtdb.firebaseio.com",
+      projectId: "blog-bed92",
+      storageBucket: "blog-bed92.appspot.com",
+      messagingSenderId: "67204185043",
+      appId: "1:67204185043:web:9d128e2444f65f89250d26",
+      measurementId: "G-F64M8EXB20"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+    console.log(app);
+
+     //----- New Registration code start	  
+     document.querySelector(".email-registration").addEventListener("click", function() {
+		  var email =  document.getElementById("email").value;
+		  var password = document.getElementById("password").value;
+		  //For new registration
+		  createUserWithEmailAndPassword(auth, email, password)
+		  .then((userCredential) => {
+		    // Signed in 
+		    const user = userCredential.user;
+		    console.log(user);
+		    alert("Registration successfully!!");
+
+            window.location.href = "index1.html";
+		    // ...
+		  })
+		  .catch((error) => {
+		    const errorCode = error.code;
+		    const errorMessage = error.message;
+		    // ..
+		    console.log(errorMessage);
+		    alert(error);
+		  });		  		  
+	  });
+	  //----- End
+
+  </script>
+</html>
