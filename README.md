@@ -16,6 +16,3 @@ However, it's important to note some limitations:
     There are no provisions for password recovery, text decoration, or user customization.
 
 Work is ongoing to address these issues and improve the app.
-
--Prakhar Pratap Singh
-@prakhar5100
