@@ -17,5 +17,5 @@ However, it's important to note some limitations:
 
 Work is ongoing to address these issues and improve the app.
 
-#Prakhar Pratap Singh
+-Prakhar Pratap Singh
 @prakhar5100
