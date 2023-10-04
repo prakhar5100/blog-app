@@ -1,4 +1,3 @@
-// JavaScript (script1.js)
 
 document.addEventListener("DOMContentLoaded", function () {
     const createPostForm = document.getElementById("create-post-form");
@@ -7,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("search-input");
     const searchButton = document.getElementById("search-button");
   
-    let posts = []; // Store blog posts in an array
+    let posts = []; 
   
     createPostForm.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -32,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
       renderPosts(filteredPosts);
     });
   
-    // Function to create a new post object
     function createPost(title, content, mediaFile) {
       const post = {
         title,
@@ -45,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return post;
     }
   
-    // Function to render the blog posts
     function renderPosts(postsToRender = posts) {
       postsContainer.innerHTML = "";
       postsToRender.forEach((post, index) => {
@@ -124,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   
-        // Function to edit a blog post
   function editPost(index) {
     const post = posts[index];
     const postElement = document.querySelector(`.post:nth-child(${index + 1})`);
@@ -138,13 +134,11 @@ document.addEventListener("DOMContentLoaded", function () {
       post.title = newTitle;
       post.content = newContent;
   
-      // Update the UI with the edited content
       postTitle.textContent = newTitle;
       postContent.textContent = newContent;
     }
   }
   
-    // Helper function to create a button
     function createButton(label) {
       const button = document.createElement("button");
       button.textContent = label;
@@ -158,14 +152,12 @@ document.addEventListener("DOMContentLoaded", function () {
         renderPosts();
       }
     }
-    // Function to toggle post content visibility
     function toggleContent(postElement) {
       const postContent = postElement.querySelector("p");
       postContent.style.display =
         postContent.style.display === "none" ? "block" : "none";
     }
     logoutButton.addEventListener("click", function () {
-      // Redirect the user to the login.html page
       window.location.href = "login.html";
   });
   });
