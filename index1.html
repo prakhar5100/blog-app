@@ -9,13 +9,9 @@
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"></script>
     <script>
-        // Check if the user is authenticated
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    // User is signed in, allow access to index1.html
-    // You can redirect the user to index1.html here.
   } else {
-    // No user is signed in, redirect to the login page
     window.location.href = "login.html";
   }
 });
